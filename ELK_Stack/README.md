@@ -92,8 +92,10 @@ Filebeat collects system logs and metricbeat collect system metric information f
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the install-elk.yml file to /etc/ansible/roles.
+- Copy the all-in-one.yml file to /etc/ansible/roles.
 - Update the hosts file to include the IP of the machine you want the ELK-stack running on under the group [elk]
 - Run the playbook, and navigate to http://[ELK-VM-External-IP]:5061 to check that the kibana installation worked as expected.
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+### Running the Playbook
+Run the all-in-one.yml by executing `ansible-playbook all-in-one.yml`
+If you wish to install only certain asecpts of the modules detailed then run `ansible-playbook [Whichever .yml file you want to install].yml
