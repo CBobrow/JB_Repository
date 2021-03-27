@@ -29,9 +29,9 @@ The configuration details of each machine may be found below.
 | Name                 | Function       | External IP    | Internal IP | OS    |
 |----------------------|----------------|----------------|-------------|-------|
 | Jump Box Provisioner | Gateway        | 52.183.37.75   | 10.0.0.4    | Linux |
-| Web1                 | Webserver      | 52.191.161.215 | 10.0.0.5    | Linux |
-| Web2                 | Webserver      | 52.191.161.215 | 10.0.0.6    | Linux |
-| Web3                 | Webserver      | 52.191.161.215 | 10.0.0.8    | Linux |
+| Web1                 | DVWA Container | 52.191.161.215 | 10.0.0.5    | Linux |
+| Web2                 | DVWA Container | 52.191.161.215 | 10.0.0.6    | Linux |
+| Web3                 | DVWA Container | 52.191.161.215 | 10.0.0.8    | Linux |
 | Load Balancer        | Load Balancing | 52.191.161.215 | N/A         | N/A   |
 | ELK Server           | ELK Stack      | 104.45.237.38  | 10.1.0.4    | Linux |
 
@@ -40,7 +40,7 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Load Balancer machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
- Local computer: 174.51.241.214
+ Local computer: [Local workstation IP]
 
 Machines within the network can only be accessed by the Jump Box Provisioner.
  Jump Box Provisioner: 52.183.37.75
@@ -53,7 +53,7 @@ A summary of the access policies in place can be found in the table below.
 | Web1                 | No                   |     52.183.37.75     |
 | Web2                 | No                   |     52.183.37.75     |
 | Web3                 | No                   |     52.183.37.75     |
-| Load Balancer        | Yes                  |    174.51.241.214    |
+| Load Balancer        | Yes                  |    Local Workstation |
 | ELK Server           | No                   |     52.183.37.75     |
 
 ### Elk Configuration
@@ -86,19 +86,14 @@ We have installed the following Beats on these machines:
 Filebeat and Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
-
+Filebeat collects system logs and metricbeat collect system metric information from each if the target systems. 
+ 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
-
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- Copy the install-elk.yml file to /etc/ansible/roles.
+- Update the hosts file to include the IP of the machine you want the ELK-stack running on under the group [elk]
+- Run the playbook, and navigate to http://[ELK-VM-External-IP]:5061 to check that the kibana installation worked as expected.
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
