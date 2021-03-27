@@ -98,4 +98,4 @@ SSH into the control node and follow the steps below:
 
 ### Running the Playbook
 Run the all-in-one.yml by executing `ansible-playbook all-in-one.yml`
-If you wish to install only certain asecpts of the modules detailed then run `ansible-playbook [Whichever .yml file you want to install].yml
+If you wish to install only certain asecpts of the modules detailed then run `ansible-playbook [Whichever .yml file you want to install].yml`
