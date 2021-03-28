@@ -49,7 +49,7 @@ A summary of the access policies in place can be found in the table below.
 
 | Name                 | Publicly Accessible  | Allowed IP Addresses |
 |----------------------|----------------------|:--------------------:|
-| Jump Box Provisioner | No                   |    174.51.241.214    |
+| Jump Box Provisioner | No                   |    Local Workstation |
 | Web1                 | No                   |     52.183.37.75     |
 | Web2                 | No                   |     52.183.37.75     |
 | Web3                 | No                   |     52.183.37.75     |
