@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, different .yml stored in https://github.com/CBobrow/JB_Repository/tree/main/ELK_Stack/Files may be used to install only certain pieces of it, such as Filebeat.
 
-[All-In-One.yml](https://github.com/CBobrow/JB_Repository/blob/main/ELK_Stack/Files/all-in-one.yml)
+![All-In-One.yml](https://github.com/CBobrow/JB_Repository/blob/main/ELK_Stack/Files/all-in-one.yml)
 
 This document contains the following details:
 - Description of the Topology
@@ -99,7 +99,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the all-in-one.yml file to /etc/ansible/roles.
 - Create a files directory in /etc/ansible and copy the filebeat-config.yml and metricbeat-config.yml to /files
-- Update the hosts file to include the IPs of the machines running the DVWA container and Beats modules under the [webservers] as well as the machine running the ELK Stack under the group [elk] 
+- Update the hosts file to include the IPs of the machines running the DVWA container and Beats modules under the group[webservers] as well as the machine running the ELK Stack under the group [elk] 
 - Run the playbook, and navigate to http://[ELK-VM-External-IP]:5061 to check that the kibana installation worked as expected.
 
 ### Running the Playbook
