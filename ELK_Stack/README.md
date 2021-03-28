@@ -42,8 +42,7 @@ The machines on the internal network are not exposed to the public Internet.
 Only the Load Balancer machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
  Local computer: [Local workstation IP]
 
-Machines within the network can only be accessed by the Jump Box Provisioner.
- Jump Box Provisioner: 52.183.37.75
+Machines within the network can only be accessed by the Jump Box Provisioner 52.183.37.75
 
 A summary of the access policies in place can be found in the table below.
 
