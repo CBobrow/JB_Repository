@@ -98,7 +98,8 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the all-in-one.yml file to /etc/ansible/roles.
-- Update the hosts file to include the IP of the machine you want the ELK-stack running on under the group [elk]
+- Create a files directory in /etc/ansible and copy the filebeat-config.yml and metricbeat-config.yml to /files
+- Update the hosts file to include the IPs of the machines running the DVWA container and Beats modules under the [webservers] as well as the machine running the ELK Stack under the group [elk] 
 - Run the playbook, and navigate to http://[ELK-VM-External-IP]:5061 to check that the kibana installation worked as expected.
 
 ### Running the Playbook
